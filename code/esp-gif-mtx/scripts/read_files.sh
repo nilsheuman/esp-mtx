@@ -9,7 +9,7 @@ additional_files=(
 )
 
 # Process all .h and .cpp files in src directory
-for file in src/*.h xsrc/*.cpp; do
+for file in src/*.h src/*.cpp; do
   [ -f "$file" ] || continue
   filename=$(basename "$file")
   printf "\n\n// File: %s\n\n" "$filename"

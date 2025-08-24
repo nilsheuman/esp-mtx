@@ -2,23 +2,25 @@
 
 My little attempt on making a slim pcb for a pixel matrix with a Esp32 Nano board.
 
-Made this last year to have on my sailing boat and it nicely show speed and direction mounted on the mast.
+Made this last year to have on my sailing boat and it nicely show speed and bearing while mounted on the mast.
 
 At first the display didn't seem so bright but on a longer distance it actually works well.
 
+Below is a photo from sailing, the frame rate of the display does not match the shutter speed so all pixels are not lit. In real life it looks pretty good!
+
 [![Sailboat Display](gfx/rogue/rogue-led-s.jpg)](gfx/rogue/rogue-led.jpg)
 
-Above is frame capture from a video while sailing, the frame rate of the display does not match the shutter speed so all pixels are not lit. In real life it looks pretty good!
+I made a simple program to draw on the display passing json via a web server: [code/esp-ledpx](code/esp-ledpx).
 
-<!-- I made a simple program to draw on the display passing json, it works but is a little slow: [code/esp-ledpx](code/esp-ledpx) -->
+Then I made another basic one to animate gif's uploaded via a web page. [code/esp-gif-mtx](code/esp-gif-mtx).
 
-Then I made another one to animate gif's uploaded via a web since I didn't find something that did that [code/esp-gif-mtx](code/esp-gif-mtx)
+It was a while since I made a PCB and after having enough of the cable mayhem that connecting these boards up I ended up drawing a PCB and ordered it pre-soldered.
 
-It was a while since I made a PCB and after having enough of the cable mayhem that connecting these boards up, I ended up drawing a PCB and ordered it pre-soldered.
+Below is most of the process documented, use it at your own risk...
 
 # Assembly
 
-The assembled board below
+The assembled display below.
 
 [![Assembled Back](gfx/ic/assembled-back-s.jpg)](gfx/ic/assembled-back.jpg)
 [![Assembled Back](gfx/ic/assembled-side-s.jpg)](gfx/ic/assembled-side.jpg)
@@ -27,16 +29,16 @@ The full kit, showing how some of the reinforcement brackets have been cut.
 
 [![Assembled Back](gfx/ic/detached-back-s.jpg)](gfx/ic/detached-back.jpg)
 
-For extra slim fit, solder on the headers, then remove the spacers and then cut the pins 2-3 mm. Can be seen in the picture below.
+For extra slim fit, solder on the headers on the ESP, then remove the spacers and then cut the pins 2-3 mm. The cut pins be seen in the picture below.
 
 [![Assembled Back](gfx/ic/esp-mini-soldered-s.jpg)](gfx/ic/esp-mini-soldered.jpg)
 
 
 # Power
 
-On the boat I powered it via a 12->5v converter and the ESP got it's power from there.
+On the boat I powered it via a 12->5v converter and the ESP got it's power from Vin.
 
-At home I instead powered the display from the ESP via usb which seems to work fine.
+At home I instead powered the display from the ESP via USB which seems to work fine.
 
 # Schematic
 
@@ -126,6 +128,8 @@ Web server that allows simple drawing of text and basic shapes.
 
 Web server that allows uploading of gif images, can set framerate in the interface.
 [code/esp-gif-mtx](code/esp-gif-mtx)
+
+[![Gif UI](gfx/code/led-gif-mtx-s.png)](gfx/code/led-gif-mtx.png)
 
 # References
 
